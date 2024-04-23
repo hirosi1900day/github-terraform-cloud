@@ -16,7 +16,9 @@ terraform {
   }
 }
 
-provider "github" {}
+provider "github" {
+  app_auth {}
+}
 
 output "github_repos" {
   value = "test"
