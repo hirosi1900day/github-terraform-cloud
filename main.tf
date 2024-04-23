@@ -1,10 +1,9 @@
 terraform {
   cloud {
-    hostname     = "app.terraform.io"
     organization = "test-horosi1900day"
 
     workspaces {
-      name = "github-terraform"
+      name = "github-terraform-cloud"
     }
   }
 
@@ -17,5 +16,9 @@ terraform {
 }
 
 provider "github" {
-  app_auth {}
+  app_auth {
+    id              = var.GITHUB_APP_ID
+    installation_id = var.GITHUB_APP_INSTALLATION_ID
+    pem_file        = var.GITHUB_APP_PEM_FILE
+  }
 }
