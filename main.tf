@@ -1,7 +1,7 @@
-terraform {
-  cloud {
-    organization = "test-horosi1900day"
-
+terraform {  
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "test-horosi1900day" 
     workspaces {
       name = "github-terraform-cloud"
     }
